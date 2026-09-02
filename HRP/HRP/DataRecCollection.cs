@@ -1,8 +1,8 @@
 namespace HRP;
 
-public class DataRecCollection
+public class DataRecCollection<T> where T : DataRec
 {
-    private readonly List<DataRec> _items;
-    public IEnumerable<DataRec> VisibleItems;
+    private readonly List<T> _items;
+    public IEnumerable<T> VisibleItems  => _items;
     
 }
