@@ -1,1 +1,9 @@
-﻿Console.WriteLine("Hello, World!");
+﻿namespace HRP;
+
+internal class Program
+{
+    static void Main(string[] args)
+    {
+        Console.WriteLine("Hello, World!");
+    }
+}
