@@ -1,16 +1,26 @@
 namespace HRP;
 
-//represents SQL table 
 public class DataRecCollection<T> where T : DataRec
 {
-    private readonly List<T> _items= new();
-    private readonly string _dbConnection; 
-    private readonly string _tableName; 
+    private string _connectionString="";
+    private string _tableName="";
+    public readonly List<T> Items = new();
 
-    public IEnumerable<T> VisibleItems  => _items;
-
-    public void Load(){
-
+    public void Load()
+    {
+        
     }
-    
+
+    public void Save(T item)
+    {
+        
+    }
+
+    public void New(T item)
+    {
+    }
+    public void Delete(T item)
+    {
+        
+    }
 }
