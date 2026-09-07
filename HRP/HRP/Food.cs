@@ -1,6 +1,6 @@
 namespace HRP;
 
-public class Food: DataRec
+public class Food: ConsumableDataRec
 {
     public bool Perishable  { get; set; }
     

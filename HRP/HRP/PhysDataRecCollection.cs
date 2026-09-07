@@ -2,8 +2,10 @@ using Microsoft.EntityFrameworkCore;
 
 namespace HRP;
 
-public class PhysDataRecCollection<T>:DataRecCollection<T>
-            where T: PhysDataRec
+public class PhysDataRecCollection<TData, TBatch>
+    : DataRecCollection<TData>
+    where TData : PhysDataRec<TBatch>
+    where TBatch : BatchRec
 {
     public PhysDataRecCollection(AppDbContext db)
         : base(db)
@@ -15,7 +17,7 @@ public class PhysDataRecCollection<T>:DataRecCollection<T>
         Items.Clear();
 
         Items.AddRange(
-            Db.Set<T>()
+            Db.Set<TData>()
                 .Include(x=>x.Batches)
                 .ToList()
         );

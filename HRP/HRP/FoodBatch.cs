@@ -1,6 +1,6 @@
 namespace HRP;
 
-class FoodBatch:BatchRec
+class FoodBatch:ConsumableBatchRec
 {
     
 }
