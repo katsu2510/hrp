@@ -2,13 +2,18 @@ namespace HRP;
 
 public class DataRecCollection<T> where T : DataRec
 {
-    private string _connectionString="";
-    private string _tableName="";
-    public readonly List<T> Items = new();
+    protected readonly AppDbContext Db;
+    public List<T> Items {get;} = new();
 
-    public void Load()
+    public DataRecCollection(AppDbContext db)
     {
-        
+        Db=db;
+    }
+
+    public virtual void Load()
+    {
+        Items.Clear();
+        Items.AddRange(Db.Set<T>().ToList());
     }
 
     public void Save(T item)
@@ -18,9 +23,12 @@ public class DataRecCollection<T> where T : DataRec
 
     public void New(T item)
     {
+        Db.Set<T>().Add(item);
+        Db.SaveChanges();
     }
     public void Delete(T item)
     {
+
         
     }
 }
