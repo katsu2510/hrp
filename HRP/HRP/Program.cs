@@ -1,10 +1,14 @@
-﻿namespace HRP;
+﻿global using System;
+
+namespace HRP;
 
 internal class Program
 {
     static void Main(string[] args)
     {
        
-        Console.WriteLine("Hello, World!");
+        Application app = new Application();
+        
+        app.Run();
     }
 }

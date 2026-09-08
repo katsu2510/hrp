@@ -23,12 +23,25 @@ public class Application: IDisposable
         _db.Database.Migrate();
         _foods.Load();
 
-        foreach(Food food in _foods.Items)
+        while (true)
         {
-          Console.WriteLine(food.Name);  
+            foreach(Food food in _foods.Items)
+            {
+                Console.WriteLine(food.Name);  
+            } 
+            
+            Console.WriteLine("Type add to add new item, edit [id] to edit an item, exit to exit");
+            string? input;
+            while ((input = Console.ReadLine())==null);
+            
+            switch (input.ToLower())
+            {
+                case "add":
+                    _foods.AddNewVisual();
+                    break;
+            }
+            
         }
-
-        
         
     }
 }

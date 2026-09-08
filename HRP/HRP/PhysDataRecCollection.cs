@@ -4,7 +4,7 @@ namespace HRP;
 
 public class PhysDataRecCollection<TData, TBatch>
     : DataRecCollection<TData>
-    where TData : PhysDataRec<TBatch>
+    where TData : PhysDataRec<TBatch>,new()
     where TBatch : BatchRec
 {
     public PhysDataRecCollection(AppDbContext db)

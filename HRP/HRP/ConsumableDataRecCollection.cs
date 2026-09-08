@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 namespace HRP;
 
 public class ConsumableDataRecCollection<T>:PhysDataRecCollection<T,ConsumableBatchRec>
-    where T : ConsumableDataRec
+    where T : ConsumableDataRec, new()
 {
     public ConsumableDataRecCollection(AppDbContext db): base(db)
     {        

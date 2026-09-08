@@ -1,6 +1,6 @@
 namespace HRP;
 
-public class DataRecCollection<T> where T : DataRec
+ public abstract class DataRecCollection<T> where T : DataRec,new()
 {
     protected readonly AppDbContext Db;
     public List<T> Items {get;} = new();
@@ -19,6 +19,22 @@ public class DataRecCollection<T> where T : DataRec
     public void Save(T item)
     {
         
+    }
+
+    public void AddNewVisual()
+    {
+        T item = new T();
+        
+        foreach (var property in item.GetType().GetProperties())
+        {
+          if (property.Name=="Id") continue;
+          if (!property.CanWrite) continue;
+          
+          Console.Write($"{property.Name}: ");
+          string? input = Console.ReadLine();
+          object? value = Convert.ChangeType(input, property.PropertyType);
+          property.SetValue(item,value);
+        }
     }
 
     public void New(T item)
