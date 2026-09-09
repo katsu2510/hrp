@@ -60,6 +60,15 @@ public class FoodConsole
 
     protected void AddNewItem()
     {
+        var newFood= new Food();
+        Console.Write("Food name: ");
+        newFood.Name=(Console.ReadLine()??"").Trim();
         
+        Console.Write("Is article expirable? (y/n): ");
+        newFood.isExpirable= (Console.ReadLine()?.Trim()=="y");
+        
+        if (newFood.isExpirable)
+        Console.Write("Life ");
+        newFood.LifespanDays
     }
 }
