@@ -9,8 +9,7 @@ public abstract class ConsumableDataRec<TBatch> : PhysDataRec<TBatch>
     public int OpenLifespanDays {get;set;}
 
     public bool isExpirable {get; set;}
-    public bool isOpenable{get;set;}  
-
+    
     //primarily will consume 
     public void ConsumeFromDataRec()
     {

@@ -69,6 +69,6 @@ public class FoodConsole
         
         if (newFood.isExpirable)
         Console.Write("Life ");
-        newFood.LifespanDays
+        
     }
 }
