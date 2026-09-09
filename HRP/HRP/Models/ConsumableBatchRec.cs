@@ -1,6 +1,6 @@
 namespace HRP;
 
-public class ConsumableBatchRec:BatchRec
+public abstract class ConsumableBatchRec:BatchRec
 {
     public bool isOpen{get; set;}
 

@@ -2,9 +2,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace HRP;
 
-public class PhysDataRecCollection<TData, TBatch>
+public abstract class PhysDataRecCollection<TData, TBatch>
     : DataRecCollection<TData>
-    where TData : PhysDataRec<TBatch>,new()
+    where TData : PhysDataRec<TBatch>
     where TBatch : BatchRec
 {
     public PhysDataRecCollection(AppDbContext db)

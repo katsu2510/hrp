@@ -2,8 +2,8 @@ using Microsoft.EntityFrameworkCore;
 
 namespace HRP;
 
-public class ConsumableDataRecCollection<T>:PhysDataRecCollection<T,ConsumableBatchRec>
-    where T : ConsumableDataRec, new()
+public abstract class ConsumableDataRecCollection<T>:PhysDataRecCollection<T,ConsumableBatchRec>
+    where T : ConsumableDataRec
 {
     public ConsumableDataRecCollection(AppDbContext db): base(db)
     {        
@@ -18,6 +18,4 @@ public class ConsumableDataRecCollection<T>:PhysDataRecCollection<T,ConsumableBa
                 .ToList()
         );
     } 
-
-
 }

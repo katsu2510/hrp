@@ -6,4 +6,9 @@ public class FoodCollection:ConsumableDataRecCollection<Food>
     {
         
     }
+
+    public override void AddNewVisual()
+    {
+        
+    }
 }
