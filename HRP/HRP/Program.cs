@@ -7,7 +7,7 @@ internal class Program
     static void Main(string[] args)
     {
        
-        Application app = new Application();
+        using var app = new Application();
         
         app.Run();
     }

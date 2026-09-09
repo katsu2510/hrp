@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\kaliska\\Documents\\hrp\\hrp\\HRP\\HRP\\HRP.csproj": {}
+    "C:\\Users\\kaliska\\Documents\\hrp\\hrp\\HRP\\HRP\\HRP.csproj": {}
   },
   "projects": {
-    "c:\\Users\\kaliska\\Documents\\hrp\\hrp\\HRP\\HRP\\HRP.csproj": {
+    "C:\\Users\\kaliska\\Documents\\hrp\\hrp\\HRP\\HRP\\HRP.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\kaliska\\Documents\\hrp\\hrp\\HRP\\HRP\\HRP.csproj",
+        "projectUniqueName": "C:\\Users\\kaliska\\Documents\\hrp\\hrp\\HRP\\HRP\\HRP.csproj",
         "projectName": "HRP",
-        "projectPath": "c:\\Users\\kaliska\\Documents\\hrp\\hrp\\HRP\\HRP\\HRP.csproj",
+        "projectPath": "C:\\Users\\kaliska\\Documents\\hrp\\hrp\\HRP\\HRP\\HRP.csproj",
         "packagesPath": "C:\\Users\\kaliska\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\kaliska\\Documents\\hrp\\hrp\\HRP\\HRP\\obj\\",
+        "outputPath": "C:\\Users\\kaliska\\Documents\\hrp\\hrp\\HRP\\HRP\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\kaliska\\AppData\\Roaming\\NuGet\\NuGet.Config"

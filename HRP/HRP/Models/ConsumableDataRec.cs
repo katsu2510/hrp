@@ -1,7 +1,8 @@
 namespace HRP;
 
 ///The inventory items have quantity and are consumable, adds the consume function 
-public abstract class ConsumableDataRec : PhysDataRec<ConsumableBatchRec>
+public abstract class ConsumableDataRec<TBatch> : PhysDataRec<TBatch>
+    where TBatch:ConsumableBatchRec
 {
     //How many days does the product last when opened 
     public int LifespanDays {get;set;}

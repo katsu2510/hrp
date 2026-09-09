@@ -16,21 +16,19 @@ namespace HRP;
         Items.AddRange(Db.Set<T>().ToList());
     }
 
-    public void Save(T item)
+    public virtual void Save(T item)
     {
         
     }
 
-    public void New(T item)
+    public virtual void New(T item)
     {
         Db.Set<T>().Add(item);
         Db.SaveChanges();
     }
-    public void Delete(T item)
+    public virtual void Delete(T item)
     {
 
         
     }
-
-    public abstract void AddNewVisual();
 }

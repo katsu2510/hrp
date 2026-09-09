@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "fHCs2cy3i6I=",
+  "dgSpecHash": "XIOjR7VuP6M=",
   "success": true,
-  "projectFilePath": "c:\\Users\\kaliska\\Documents\\hrp\\hrp\\HRP\\HRP\\HRP.csproj",
+  "projectFilePath": "C:\\Users\\kaliska\\Documents\\hrp\\hrp\\HRP\\HRP\\HRP.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\kaliska\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\kaliska\\.nuget\\packages\\microsoft.build.framework\\18.0.2\\microsoft.build.framework.18.0.2.nupkg.sha512",

@@ -6,7 +6,7 @@ public abstract class PhysDataRec : DataRec
 {
 }
 
-public class PhysDataRec<TBatch> : DataRec 
+public class PhysDataRec<TBatch> : PhysDataRec 
     where TBatch:BatchRec
 {
     public List<TBatch> Batches { get; set; } = new();
