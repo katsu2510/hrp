@@ -1,6 +1,6 @@
 namespace HRP;
 
-public class FoodConsole:IUserInterface
+public class FoodConsole
 {
     private readonly FoodService _foodService;
     public FoodConsole(FoodService foodService)

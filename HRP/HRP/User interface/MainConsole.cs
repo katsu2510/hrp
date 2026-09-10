@@ -1,4 +1,4 @@
-public class MainConsole:IUserInterface
+public class MainConsole
 {
     
     public void Run()
