@@ -8,12 +8,10 @@ public class FoodConsole
         _foodService=foodService;
     }
 
-    public void Run()
-    {
-        bool hasItems;
-        hasItems=ShowItems();
-        ShowActionMenu(hasItems);
-        string? input=Console.ReadLine();
+    public void Run()    {
+           
+        ShowActionMenu(ShowItems());
+        string input=Console.ReadLine()??"";
         
         switch (input)
         {
@@ -60,12 +58,12 @@ public class FoodConsole
 
     protected void AddNewItem()
     {
-        var newFood= new Food();
+      
         Console.Write("Food name: ");
-        newFood.Name=(Console.ReadLine()??"").Trim();
+        var Name=(Console.ReadLine()??"").Trim();
         
         Console.Write("Is article expirable? (y/n): ");
-        newFood.isExpirable= (Console.ReadLine()?.Trim()=="y");
+        var isExpirable= (Console.ReadLine()?.Trim()=="y");
         
         if (newFood.isExpirable)
         Console.Write("Life ");
