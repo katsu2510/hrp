@@ -2,10 +2,10 @@ namespace HRP;
 
 public class MainConsole
 {
-    private readonly FoodService _foodService;
-    public MainConsole(FoodService foodService)
+    private readonly FoodConsole _foodConsole;
+    public MainConsole(FoodConsole foodConsole)
     {
-        _foodService=foodService;    
+        _foodConsole=foodConsole;    
     }
 
     public void Run()
@@ -21,7 +21,7 @@ public class MainConsole
         switch (input.Trim())
         {
             case "1":
-                _foodService.Run();
+                _foodConsole.Run();
                 break;    
         }
     }       

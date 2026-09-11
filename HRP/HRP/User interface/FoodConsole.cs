@@ -1,3 +1,5 @@
+using Microsoft.VisualBasic;
+
 namespace HRP;
 
 public class FoodConsole
@@ -58,15 +60,9 @@ public class FoodConsole
 
     protected void AddNewItem()
     {
-      
-        Console.Write("Food name: ");
-        var Name=(Console.ReadLine()??"").Trim();
-        
-        Console.Write("Is article expirable? (y/n): ");
-        var isExpirable= (Console.ReadLine()?.Trim()=="y");
-        
-        if (newFood.isExpirable)
-        Console.Write("Life ");
-        
+        var food=new Food();
+        food.Name=ConsoleHelper.ReadString("Name");                  
+        food.IsExpirable=ConsoleHelper.ReadYN("Is the food expirable?");
+        food.ClosedLifespanDays=ConsoleHelper.ReadIntNull("");        
     }
 }

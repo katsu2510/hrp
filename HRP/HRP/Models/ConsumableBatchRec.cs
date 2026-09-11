@@ -9,5 +9,6 @@ public abstract class ConsumableBatchRec:BatchRec
 
     //Datum expiry date, nebo když je jídlo otvorené a perishable, tak se počítá  
     public DateTime ExpiryDate{get;set;}
-    
+    public float Quantity{get;set;}
+    public float QuantityConsumed{get;set;}
 } 

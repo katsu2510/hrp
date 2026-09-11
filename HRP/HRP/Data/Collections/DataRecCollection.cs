@@ -1,3 +1,5 @@
+using Microsoft.EntityFrameworkCore;
+
 namespace HRP;
 
  public abstract class DataRecCollection<T> where T : DataRec
@@ -21,10 +23,19 @@ namespace HRP;
         
     }
 
-    public virtual void New(T item)
+    public virtual bool New(T item)
     {
-        Db.Set<T>().Add(item);
-        Db.SaveChanges();
+        try
+        {
+            Db.Set<T>().Add(item);
+            Db.SaveChanges();
+            return true;    
+        }
+        catch (DbUpdateException)
+        {
+            return false;
+        }
+        
     }
     public virtual void Delete(T item)
     {
