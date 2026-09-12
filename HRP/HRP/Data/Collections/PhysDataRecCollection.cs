@@ -1,5 +1,3 @@
-using Microsoft.EntityFrameworkCore;
-
 namespace HRP;
 
 public abstract class PhysDataRecCollection<TData, TBatch>

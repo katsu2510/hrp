@@ -1,4 +1,4 @@
-namespace HRP;
+namespace HRP.Services;
 
 public class FoodService
 {
@@ -32,7 +32,6 @@ public class FoodService
             {
                 Name = food.Name,
                 IsExpirable=food.IsExpirable,
-                ClosedLifespanDays=food.ClosedLifespanDays,
                 OpenLifespanDays=food.OpenLifespanDays                
             }               
         );

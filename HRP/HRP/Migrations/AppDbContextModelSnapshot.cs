@@ -14,7 +14,7 @@ namespace HRP.Migrations
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
-            modelBuilder.HasAnnotation("ProductVersion", "10.0.11");
+            modelBuilder.HasAnnotation("ProductVersion", "10.0.12");
 
             modelBuilder.Entity("HRP.FoodBatch", b =>
                 {
@@ -42,6 +42,9 @@ namespace HRP.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<float>("Quantity")
+                        .HasColumnType("REAL");
+
+                    b.Property<float>("QuantityConsumed")
                         .HasColumnType("REAL");
 
                     b.Property<bool>("isOpen")
@@ -84,13 +87,13 @@ namespace HRP.Migrations
                 {
                     b.HasBaseType("HRP.PhysDataRec");
 
-                    b.Property<int>("LifespanDays")
+                    b.Property<int?>("ClosedLifespanDays")
                         .HasColumnType("INTEGER");
 
-                    b.Property<bool>("Perishable")
+                    b.Property<bool>("IsExpirable")
                         .HasColumnType("INTEGER");
 
-                    b.Property<bool>("isExpirable")
+                    b.Property<int>("OpenLifespanDays")
                         .HasColumnType("INTEGER");
 
                     b.HasDiscriminator().HasValue("Food");
