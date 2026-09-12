@@ -1,4 +1,4 @@
-namespace HRP;
+namespace HRP.User_interface;
 
 public class ConsoleHelper
 {
@@ -10,7 +10,7 @@ public class ConsoleHelper
 
     static public bool ReadYN(string prompt)
     {
-        
+        Console.Write(prompt+" (y/n): ");
         string input=Console.ReadLine()??"".Trim().ToLower();
         while (input!="y" && input!="n")
         {

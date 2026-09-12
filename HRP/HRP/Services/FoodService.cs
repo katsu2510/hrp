@@ -14,7 +14,7 @@ public class FoodService
         return _foods.Items;
     }
 
-    public ServiceResponse AddNew(Food food)
+    public ServiceResponse Validate(Food food)
     {
         List<ValidationError>errors=new();
         if (string.IsNullOrWhiteSpace(food.Name))
@@ -27,6 +27,14 @@ public class FoodService
             errors.Add(new ValidationError(null,"If food is expirable, open lifespan must be greater than zero."));
         }
 
+        return new ServiceResponse(errors.Any(), errors);
+
+    }
+
+    public ServiceResponse AddNew(Food food)
+    {
+        var serviceResponse = Validate(food);
+        
         var success=_foods.New(
             new Food
             {
@@ -38,15 +46,9 @@ public class FoodService
 
         if (!success)
         {
-            errors.Add(new ValidationError(null,"If food is expirable, open lifespan must be greater than zero."));   
+            serviceResponse.Errors.Add(new ValidationError(null,"Item could not be added."));
         }
-
-
-        if (errors.Count()==0)  
-            return new ServiceResponse(true,errors);
-        else
-            return new ServiceResponse(false,errors);    
+        return serviceResponse;
     }
-
 
 }

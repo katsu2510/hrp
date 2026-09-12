@@ -3,7 +3,7 @@ namespace HRP;
 public class ValidationError
 {
     public string? PropertyName {get;init;}
-    public string Message{get;init;}="";
+    public string Message{get;init;}
 
     public ValidationError(string? propertyName, string message)
     {

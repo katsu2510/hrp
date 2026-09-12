@@ -79,10 +79,28 @@ public class FoodConsole
     private void AddNewItem()
     {
         var food=new Food();
-        food.Name=ConsoleHelper.ReadString("Nameof the food:");                  
+        food.Name=ConsoleHelper.ReadString("Name of the food");                  
         food.IsExpirable=ConsoleHelper.ReadYN("Is the food expirable closed?");
         food.OpenLifespanDays =
-            ConsoleHelper.ReadIntNull("Open lifespan days (how long does the food last after being opened):");
+            ConsoleHelper.ReadIntNull("Open lifespan days (how long does the food last after being opened)");
+        
+        var response=_foodService.AddNew(food);
+        if (response.Success)
+        {
+            Console.WriteLine("Added new item successfully.");
+        }
+        else
+        {
+            foreach(var error in response.Errors)
+            {
+                Console.WriteLine(error.Message);
+                if (error.PropertyName != null)
+                {
+                    
+                    
+                } 
+            } 
+        }
     }
 
     private void EditItem()

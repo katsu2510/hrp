@@ -1,6 +1,4 @@
-using HRP.User_interface;
-
-namespace HRP; 
+namespace HRP.User_interface;
 
 public class MainConsole
 {
