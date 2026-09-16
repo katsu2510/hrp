@@ -70,19 +70,31 @@ public class FoodConsole
     {
         Console.WriteLine("=================");
         Console.WriteLine(isNotEmpty
-            ? "Press 1 to add new item, 4 to exit."
-            : "Press 1 to add new item, 2 to edit an item, 3 to delete an item, 0 to exit.");
+            ? "Press 1 to add new item, 2 to edit an item, 3 to delete an item, 0 to exit." 
+            : "Press 1 to add new item, 4 to exit.");
         Console.WriteLine("=================");
         Console.Write("Choose an option:");
     }
 
+    private void ResolveErrors(ServiceResponse response)
+    {
+        if (response.Errors.Count()==0)
+        {
+            return;
+        }
+
+        //TODO 
+    }
+
     private void AddNewItem()
     {
+        bool cancelled=false;
         var food=new Food();
-        food.Name=ConsoleHelper.ReadString("Name of the food");                  
-        food.IsExpirable=ConsoleHelper.ReadYN("Is the food expirable closed?");
+        food.Name=ConsoleHelper.ReadString("Name of the food", out cancelled);                  
+        food.IsExpirable=ConsoleHelper.ReadYN("Is the food expirable closed?", out cancelled);
         food.OpenLifespanDays =
-            ConsoleHelper.ReadIntNull("Open lifespan days (how long does the food last after being opened)");
+            ConsoleHelper.ReadIntNull("Open lifespan days (how long does the food last after being opened)",
+                                        out cancelled);
         
         var response=_foodService.AddNew(food);
         if (response.Success)
@@ -91,15 +103,7 @@ public class FoodConsole
         }
         else
         {
-            foreach(var error in response.Errors)
-            {
-                Console.WriteLine(error.Message);
-                if (error.PropertyName != null)
-                {
-                    
-                    
-                } 
-            } 
+            ResolveErrors(response);
         }
     }
 
